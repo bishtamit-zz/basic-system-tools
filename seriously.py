@@ -1,7 +1,8 @@
-import time
+import os
 
-print 'first repos test'
-time.sleep(2)
-print 'test complete'
-for i in range(10):
-    print "printing it nicely {}".format(i)
+cur_dir = os.getcwd() 
+print "you are in {}".format(cur_dir)
+for file in os.listdir(cur_dir):
+    if file != 'rename.py':
+        os.rename(file, 'new' + file)
+    
