@@ -45,6 +45,20 @@ while 1:
             raise
             print "File does not exist, try again."            
     elif choice == 4:
+        print """What common rename option you would like to perform:
+        1. Change extension
+        2. Add prefix to name
+        3. Add suffix to name
+        4. ..."""
+        rch = int(raw_input())
+        file_list = raw_input("Enter the file names with comma: ")
+        if rch == 1:
+            new_ext = raw_input("Enter the new extension without '.' : ")
+            for file in file_list.split(','):
+                org_ext = os.path.splitext(file)[1]
+                ext_len = len(org_ext) - 1
+                os.rename(file , file[:-(ext_len)] + new_ext
+        
         print "This option will be available soon"
     elif choice == 5:
         break
